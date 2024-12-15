@@ -1,0 +1,456 @@
+:root {
+  /* Primary colors */
+  --primary-color: #1F3258;
+  --primary-hover-color: #17324d;
+
+  --primary-text-color: #1F3258;
+
+  /* Secondary colors */
+  --light-bg: #f8f9fa;
+  --text-color: #555;
+  --box-shadow-color: rgba(0, 0, 0, 0.1);
+  --hover-box-shadow-color: rgb(255, 255, 255);
+
+  /* Spacing and dimensions */
+  --border-radius: 0.625rem;
+  --card-height: 20rem;
+  --image-height: 7.5rem;
+
+  /* Typography */
+  --font-size-title: 1.5rem;
+  --font-weight-bold: bold;
+
+  /* Transition */
+  --transition-duration: 0.3s;
+
+}
+
+body {
+  font-family: "Parkinsans", sans-serif;
+  font-optical-sizing: auto;
+  color: var(--primary-text-color);
+}
+
+h1 {
+  margin-bottom: 4rem;
+}
+
+.c-hr {
+  margin-top: -2rem;
+  margin-bottom: -2rem;
+}
+
+.service-section {
+  background-color: var(--primary-color);
+}
+
+.service-card {
+  display: flex;
+  align-items: center;
+  transition: transform var(--transition-duration), box-shadow var(--transition-duration);
+  height: var(--card-height);
+  overflow: hidden;
+}
+
+.service-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 0.625rem 1.25rem var(--light-bg);
+  border: 0.0625rem solid var(--primary-color);
+}
+
+.service-icon {
+  width: auto;
+  height: var(--image-height);
+}
+
+.c-service-font-size {
+  font-size: 1.25rem;
+  color: var(--primary-color);
+}
+
+.about-section {
+  background-color: var(--primary-color);
+}
+
+.about-us-section {
+  background-color: var(--light-bg);
+  margin: 0.5rem;
+}
+
+.about-us-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: var(--border-radius);
+}
+
+.about-us-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 1.25rem;
+}
+
+.about-us-section {
+  box-shadow: 0 0.5rem 1rem var(--box-shadow-color);
+  border-radius: var(--border-radius);
+  overflow: hidden;
+}
+
+/* Our goal */
+.our-goal-image {
+  width: 25rem;
+  height: auto;
+  object-fit: cover;
+  border-radius: var(--border-radius);
+}
+
+.our-goal-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 1.25rem;
+}
+
+/* FAQ Section */
+.faq-title {
+  font-size: var(--font-size-title);
+  color: var(--primary-color);
+  font-weight: var(--font-weight-bold);
+}
+
+.faq-icon {
+  font-size: var(--font-size-title);
+  transition: transform var(--transition-duration) ease;
+}
+
+.faq-item {
+  margin-bottom: 0.9375rem;
+}
+
+.accordion-button::after {
+  content: '';
+  font-weight: 900;
+  font-size: var(--font-size-title);
+}
+
+.accordion-button:focus,
+.accordion-button:not(.collapsed) {
+  box-shadow: none;
+  background-color: transparent;
+}
+
+/* Slick Slider */
+.slick-slider .card {
+  margin: 1rem;
+}
+
+.slick-slider .card img {
+  object-fit: cover;
+  height: 10rem;
+  width: 10rem;
+  border-radius: 50% 50%;
+}
+
+.slick-slide {
+  padding: 0.625rem;
+}
+
+.c-choose-us-heading {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--primary-color);
+}
+
+/* .slick-prev,
+.slick-next {
+  color: var(--primary-color);
+} */
+
+/* Career Section */
+.career-section {
+  background-color: var(--light-bg);
+  padding: 3.125rem 1.25rem;
+  border-radius: var(--border-radius);
+  box-shadow: 0 0.25rem 0.9375rem var(--box-shadow-color);
+}
+
+.career-section img {
+  border-radius: var(--border-radius);
+  object-fit: cover;
+  width: 100%;
+}
+
+.career-section h2 {
+  font-weight: var(--font-weight-bold);
+}
+
+.career-section p {
+  font-size: 1.1rem;
+}
+
+.career-section a {
+  font-weight: var(--font-weight-bold);
+  color: var(--primary-color);
+  text-decoration: none;
+}
+
+.career-section a:hover {
+  text-decoration: underline;
+}
+
+.map-container {
+  width: 100%;
+  height: 31.25rem;
+}
+
+.map-container iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+/* Form Container */
+#contact h2 {
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin-bottom: 1.25rem;
+}
+
+#contact .form-control {
+  border: 0.0625rem solid var(--light-bg);
+  border-radius: 0.5rem;
+  transition: all 0.3s ease-in-out;
+}
+
+#contact .form-control:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0rem 0rem 0.3125rem var(--box-shadow-color);
+  outline: none;
+}
+
+#contact .submit-btn {
+  background-color: var(--primary-color);
+  color: var(--light-bg);
+  border: none;
+  border-radius: 0.5rem;
+  padding: 0.625rem 1.25rem;
+  font-weight: bold;
+  transition: all 0.3s ease-in-out;
+}
+
+#contact .submit-btn:hover {
+  background-color: var(--primary-hover-color);
+  color: var(--light-bg);
+  box-shadow: 0rem 0.3125rem 0.625rem var(--box-shadow-color);
+}
+
+.c-error {
+  color: red; 
+  display: none;
+  display: inline-block; 
+  height: 1.25rem; 
+}
+
+.image-container img {
+  width: 100%;
+  height: auto;
+  border-radius: var(--border-radius);
+}
+
+/* Footer */
+footer {
+  background-color: var(--primary-color);
+}
+
+
+
+/* navbar */
+.c-nav-section {
+  background-color: var(--primary-color);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+}
+
+@media (max-width: 768px) {
+  .c-nav-section {
+    align-items: flex-start;
+  }
+}
+
+.navbar {
+  background-color: var(--primary-color);
+  padding: 0;
+}
+
+/* Default navbar link color */
+.navbar-nav .nav-link {
+  color: var(--light-bg) !important;
+  text-decoration: none;
+  /* Remove default underline */
+  position: relative;
+  /* Required for the pseudo-element */
+  transition: color 0.3s ease, border-bottom 0.3s ease;
+  /* Smooth transition */
+  margin-left: 1rem;
+}
+
+.navbar-nav .nav-link::after {
+  content: '';
+  /* Creates the underline */
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 0.125rem;
+  /* Thickness of the underline */
+  background-color: var(--light-bg);
+  /* Color of the underline */
+  transform: scaleX(0);
+  /* Initially no underline */
+  transform-origin: bottom right;
+  transition: transform 0.3s ease;
+  /* Smooth transition */
+}
+
+.navbar-nav .nav-link:hover::after {
+  transform: scaleX(1);
+  /* Underline appears on hover */
+  transform-origin: bottom left;
+}
+
+.navbar-nav {
+  margin: auto 0;
+}
+
+.navbar-collapse {
+  border-top: none;
+  box-shadow: none;
+  padding: 0;
+}
+
+/* Back to Top Button Styles */
+#backToTop {
+  position: fixed;
+  bottom: 1.25rem;
+  right: 1.25rem;
+  background-color: var(--light-bg);
+  border-radius: 5rem;
+  border: none;
+  cursor: pointer;
+  display: none;
+  /* Initially hidden */
+  z-index: 9999;
+  box-shadow: 0 0.25rem 0.375rem var(--primary-color);
+}
+
+#backToTop img {
+  width: 3rem;
+  /* Set image size */
+  height: 4rem; 
+  border-radius: 50%;
+  transition: transform 0.3s ease;
+}
+
+#backToTop img:hover {
+  transform: scale(1.1);
+  /* Slight zoom effect on hover */
+}
+
+
+
+
+/* Popup Container */
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Dim background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  transition: opacity 0.3s ease-in-out;
+}
+
+/* Hidden state for popup */
+.popup.hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+
+/* Popup Content */
+.popup-content {
+  background: var(--light-bg);
+  padding: 2rem;
+  border-radius: 0.625rem;
+  max-width: 90%;
+  text-align: center;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  animation: fadeIn 0.4s ease-in-out;
+}
+
+/* Popup Image */
+.popup-image {
+  max-width: 100px;
+  margin-bottom: 1rem;
+}
+
+/* Popup Heading */
+.popup-content h2 {
+  font-size: 1.8rem;
+  color: var(--primary-color);
+  margin-bottom: 0.5rem;
+}
+
+/* Popup Text */
+.popup-content p {
+  font-size: 1rem;
+  color: #333;
+  margin-bottom: 1.5rem;
+}
+
+/* Close Button */
+.popup-button {
+  padding: 0.7rem 1.5rem;
+  font-size: 1rem;
+  color: var(--light-bg);
+  background: var(--primary-color);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.popup-button:hover {
+  background: var(--primary-color);
+}
+
+/* Animation */
+@keyframes fadeIn {
+  from {
+      transform: scale(0.9);
+      opacity: 0;
+  }
+  to {
+      transform: scale(1);
+      opacity: 1;
+  }
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .popup-content {
+      padding: 1.5rem;
+  }
+  .popup-content h2 {
+      font-size: 1.5rem;
+  }
+  .popup-content p {
+      font-size: 0.9rem;
+  }
+}
