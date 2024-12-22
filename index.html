@@ -762,16 +762,16 @@
 
                         <!-- First Name -->
                         <div class="mb-3" data-aos="fade-up" data-aos-delay="200" data-aos-easing="ease-in-out">
-                            <label for="First Name">First Name:</label>
+                            <label for="firstName">First Name:</label>
                             <input type="text" class="form-control" name="first_name" id="firstName"
-                                placeholder="First Name" required
+                                placeholder="First Name" required autocomplete="given-name"
                                 onblur="validateRequiredField(this, 'firstNameError', 'First Name is required.')">
                             <span id="firstNameError" class="c-error"></span>
                         </div>
 
                         <!-- Last Name -->
                         <div class="mb-3" data-aos="fade-up" data-aos-delay="300" data-aos-easing="ease-in-out">
-                            <label for="Last Name">Last Name:</label>
+                            <label for="lastName">Last Name:</label>
                             <input type="text" class="form-control" name="last_name" id="lastName"
                                 placeholder="Last Name" required
                                 onblur="validateRequiredField(this, 'lastNameError', 'Last Name is required.')">
@@ -780,23 +780,23 @@
 
                         <!-- Email -->
                         <div class="mb-3" data-aos="fade-up" data-aos-delay="400" data-aos-easing="ease-in-out">
-                            <label for="Email">Email:</label>
+                            <label for="email">Email:</label>
                             <input type="email" class="form-control" name="email" id="email" placeholder="Email Address"
-                                required onblur="validateEmail(this, 'emailError')">
+                                required autocomplete="email" onblur="validateEmail(this, 'emailError')">
                             <span id="emailError" class="c-error"></span>
                         </div>
 
                         <!-- Company -->
                         <div class="mb-3" data-aos="fade-up" data-aos-delay="600" data-aos-easing="ease-in-out">
-                            <label for="Company">Company:</label>
+                            <label for="company">Company:</label>
                             <input type="text" class="form-control" name="company" id="company" placeholder="Company"
-                                required onblur="validateRequiredField(this, 'companyError', 'Company is required.')">
+                                required autocomplete="organization" onblur="validateRequiredField(this, 'companyError', 'Company is required.')">
                             <span id="companyError" class="c-error"></span>
                         </div>
 
                          <!-- Reason -->
                          <div class="mb-3" data-aos="fade-up" data-aos-delay="600" data-aos-easing="ease-in-out">
-                            <label for="Reason">Select Reason:</label>
+                            <label for="00NWU000006pQpp">Select Reason:</label>
                             <select aria-label="Reason" class="form-control" id="00NWU000006pQpp"
                                 name="00NWU000006pQpp" title="Reason" required>
                                 <option value="">--None--</option>
@@ -811,7 +811,7 @@
                         <!-- Country -->
                         <div class="mb-3" data-aos="fade-up" data-aos-delay="600" data-aos-easing="ease-in-out">
                             <label for="user-country">Select your country:</label>
-                            <select aria-label="Country" class="form-control" name="country_code" required>
+                            <select aria-label="Country" class="form-control" id="user-country" name="country_code" required>
                                 <option value="">--None--</option>
                                 <option value="AF">Afghanistan</option>
                                 <option value="AX">Aland Islands</option>
@@ -1063,9 +1063,9 @@
 
                         <!-- Phone -->
                         <div class="mb-3" data-aos="fade-up" data-aos-delay="500" data-aos-easing="ease-in-out">
-                            <label for="Phone">Phone:</label>
+                            <label for="phone">Phone:</label>
                             <input type="tel" class="form-control" name="phone" id="phone" placeholder="Phone Number"
-                                required onblur="validatePhone(this, 'phoneError')">
+                                required autocomplete="tel" onblur="validatePhone(this, 'phoneError')">
                             <span id="phoneError" class="c-error"></span>
                         </div>
 
@@ -1183,17 +1183,17 @@
 
                             <!-- First Name -->
                             <div class="">
-                                <label for="First Name">First Name:</label>
-                                <input type="text" class="form-control" name="first_name" placeholder="First Name"
-                                    required
+                                <label for="firstName">First Name:</label>
+                                <input type="text" class="form-control" id="firstName" name="first_name" placeholder="First Name"
+                                    required autocomplete="given-name"
                                     onblur="validateRequiredField(this, 'training_firstNameError', 'First Name is required.')">
                                 <span id="training_firstNameError" class="c-error"></span>
                             </div>
 
                             <!-- Last Name -->
                             <div class="">
-                                <label for="Last Name">Last Name:</label>
-                                <input type="text" class="form-control" name="last_name" placeholder="Last Name"
+                                <label for="lastName">Last Name:</label>
+                                <input type="text" class="form-control" id="lastName" name="last_name" placeholder="Last Name"
                                     required
                                     onblur="validateRequiredField(this, 'training_lastNameError', 'Last Name is required.')">
                                 <span id="training_lastNameError" class="c-error"></span>
@@ -1201,16 +1201,16 @@
 
                             <!-- Email -->
                             <div class="">
-                                <label for="Email">Email:</label>
-                                <input type="email" class="form-control" name="email" placeholder="Email Address"
-                                    required onblur="validateEmail(this, 'training_emailError')">
+                                <label for="email">Email:</label>
+                                <input type="email" class="form-control" id="email" name="email" placeholder="Email Address"
+                                    required autocomplete="email" onblur="validateEmail(this, 'training_emailError')">
                                 <span id="training_emailError" class="c-error"></span>
                             </div>
 
                             <!-- Reason -->
                             <div class="">
-                                <label for="Reason">Select Reason:</label>
-                                <select aria-label="Reason" class="form-control" id="00NWU000006pQpp"
+                                <label for="reason">Select Reason:</label>
+                                <select aria-label="Reason" id="reason" class="form-control" id="00NWU000006pQpp"
                                     name="00NWU000006pQpp" title="Reason" required>
                                     <option value="">--None--</option>
                                     <option value="Training" selected>Training</option>
@@ -1224,7 +1224,7 @@
                             <!-- Country -->
                             <div class="">
                                 <label for="user-country">Select your country:</label>
-                                <select aria-label="Country" class="form-control" name="country_code" required>
+                                <select aria-label="Country" id="user-country" class="form-control" name="country_code" required>
                                     <option value="">--None--</option>
                                     <option value="AF">Afghanistan</option>
                                     <option value="AX">Aland Islands</option>
@@ -1476,9 +1476,9 @@
 
                             <!-- Phone -->
                             <div class="">
-                                <label for="Phone">Phone:</label>
-                                <input type="tel" class="form-control" name="phone" placeholder="Phone Number" required
-                                    onblur="validatePhone(this, 'training_phoneError')">
+                                <label for="phone">Phone:</label>
+                                <input type="tel" class="form-control" id="phone" name="phone" placeholder="Phone Number" required
+                                autocomplete="tel" onblur="validatePhone(this, 'training_phoneError')">
                                 <span id="training_phoneError" class="c-error"></span>
                             </div>
 
