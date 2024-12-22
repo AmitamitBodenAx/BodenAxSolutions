@@ -274,6 +274,15 @@ footer {
   padding: 1rem;
 }
 
+.c-nav-logo {
+  width: 16rem;
+  height: auto;
+}
+
+.c-nav-logo a {
+ padding: 0;
+}
+
 @media (max-width: 768px) {
   .c-nav-section {
     align-items: flex-start;

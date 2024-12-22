@@ -2,58 +2,80 @@
 function validateRequiredField(input, errorId, errorMessage) {
     const errorElement = document.getElementById(errorId);
 
-    if (input.value.trim() === "") {
+    if (input.value.trim() === '') {
         errorElement.textContent = errorMessage;
-        errorElement.style.display = "inline";
+        errorElement.style.display = 'inline';
     } else {
-        errorElement.style.display = "none";
-    }
-}
-
-// Email Validation
-function validateEmail(input) {
-    const emailError = document.getElementById("emailError");
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
-    if (input.value === "") {
-        emailError.textContent = "Email address is required.";
-        emailError.style.display = "inline";
-    } else if (!emailRegex.test(input.value)) {
-        emailError.textContent = "Please enter a valid email address.";
-        emailError.style.display = "inline";
-    } else {
-        emailError.style.display = "none";
-    }
-}
-
-// Phone Validation
-function validatePhone(input) {
-    const phoneError = document.getElementById("phoneError");
-    const phoneRegex = /^\+?[1-9]\d{1,14}$/; // Fixed the regex pattern
-
-    if (input.value === "") {
-        phoneError.textContent = "Phone number is required.";
-        phoneError.style.display = "inline";
-        return false; // Prevent form submission
-    } else if (!phoneRegex.test(input.value)) {
-        phoneError.textContent = "Please enter a valid phone number.";
-        phoneError.style.display = "inline";
-        return false; // Prevent form submission
-    } else {
-        phoneError.style.display = "none";
         return true; // Allow form submission
     }
 }
 
-// Disable submit button until form is valid
-function checkFormValidity() {
-    const form = document.getElementById("leadForm");
-    const submitButton = document.getElementById("submitButton");
+// Email Validation
+function validateEmail(input, errorId) {
+    const emailError = document.getElementById(errorId);
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-    // Check if the form is valid
-    if (form.checkValidity()) {
-        submitButton.disabled = false;
+    if (input.value === '') {
+        emailError.textContent = 'Email address is required.';
+        emailError.style.display = 'inline';
+        return false;
+    } else if (!emailRegex.test(input.value)) {
+        emailError.textContent = 'Please enter a valid email address.';
+        emailError.style.display = 'inline';
+        return false;
     } else {
-        submitButton.disabled = true;
+        return true; // Allow form submission 
     }
+}
+
+// Phone Validation
+function validatePhone(input, errorId) {
+    const phoneError = document.getElementById(errorId);
+    const phoneRegex = /^(\+?[0-9]\d{1,14})$/; // Fixed the regex pattern
+
+    if (input.value === '') {
+        phoneError.textContent = 'Phone number is required.';
+        phoneError.style.display = 'inline';
+        return false; // Prevent form submission
+    } else if (!phoneRegex.test(input.value)) {
+        phoneError.textContent = 'Please enter a valid phone number.';
+        phoneError.style.display = 'inline';
+        return false; // Prevent form submission
+    } else {
+        return true; // Allow form submission
+    }
+}
+
+// Open modal function
+const openModalBtns = document.querySelectorAll('.openModalBtn');
+openModalBtns.forEach(button => {
+  button.onclick = function() {
+    const targetModal = document.getElementById(button.getAttribute('data-target'));
+    targetModal.style.display = "block"; // Show the modal
+    const form = targetModal.querySelector('form');
+    form.reset(); // Reset the form when modal opens
+  };
+});
+
+// Close modal function
+const closeModalBtns = document.querySelectorAll('.closeModalBtn');
+closeModalBtns.forEach(button => {
+  button.onclick = function() {
+    const modal = button.closest('.modal');
+    modal.style.display = "none"; // Close the modal
+    const form = modal.querySelector('form');
+    form.reset(); // Reset the form when modal closes
+  };
+});
+
+// Close modal if user clicks outside modal content
+window.onclick = function(event) {
+  const modals = document.querySelectorAll('.modal');
+  modals.forEach(modal => {
+    if (event.target === modal) {
+      modal.style.display = "none";
+      const form = modal.querySelector('form');
+      form.reset(); // Reset the form when modal closes
+    }
+  });
 }
