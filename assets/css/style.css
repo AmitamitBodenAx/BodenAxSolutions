@@ -65,6 +65,10 @@ h1 {
   background-color: var(--primary-color);
 }
 
+.service-section h1.c-text-color {
+  color: var(--light-bg);
+}
+
 .service-card {
   display: flex;
   align-items: center;
