@@ -488,3 +488,8 @@ footer {
       font-size: 0.9rem;
   }
 }
+
+.disabled-link {
+  opacity: 0.6; /* Dim the link to show it's disabled */
+  text-decoration: none; /* Remove underline for clarity */
+}
